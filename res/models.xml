@@ -110,6 +110,16 @@
 	<interaction parameter="j" from="0,-1,0,2" to="-1,0,0,1" type="heisenberg" />
 </model>
 
+<model name="kagome-breathing">
+	<!-- Heisenberg model on the kagome lattice -->
+	<interaction parameter="jup" from="0,0,0,1" to="0,0,0,0" type="heisenberg" />
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="jup" from="0,0,0,2" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="jdown" from="-1,0,0,1" to="0,0,0,0" type="heisenberg" />
+	<interaction parameter="jdown" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="jdown" from="0,-1,0,2" to="-1,0,0,1" type="heisenberg" />
+</model>
+
 <model name="kagome-j1j2heisenberg">
 	<!-- J1-J2-Heisenberg model on the kagome lattice -->
 	<interaction parameter="j1" from="0,0,0,1" to="0,0,0,0" type="heisenberg" />
@@ -147,6 +157,8 @@
 	<interaction parameter="j" from="0,0,0,1" to="0,0,0,0" type="heisenberg" />
 	<interaction parameter="d" from="0,0,0,1" to="0,0,0,0" type="xy" />
 	<interaction parameter="d" from="0,0,0,1" to="0,0,0,0" type="-yx" />
+        
+        
 
 	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
 	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="xy" />
@@ -207,6 +219,37 @@
 	<interaction parameter="j" from="0,0,0,0" to="1,-1,0,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="1,0,-1,0" type="heisenberg" />
 	<interaction parameter="j" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
+</model>
+
+<model name="fcc-j1j2j3j4heisenberg">
+	<!-- J1-J2-Heisenberg model on the fcc lattice -->
+	<interaction parameter="j1" from="0,0,0,0" to="0,0,1,0" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,0" to="0,1,-1,0" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,0" to="0,1,0,0" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,0" to="1,-1,0,0" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,0" to="1,0,-1,0" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,0" to="1,0,0,0" type="heisenberg" />
+	<interaction parameter="j2" from="0,0,0,0" to="1,-1,-1,0" type="heisenberg" />
+	<interaction parameter="j2" from="0,0,0,0" to="1,-1,1,0" type="heisenberg" />
+	<interaction parameter="j2" from="0,0,0,0" to="1,1,-1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="0,1,1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="1,0,1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="1,1,0,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="2,0,-1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="2,-1,0,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="2,-1,-1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="-1,2,0,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="0,2,-1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="-1,2,-1,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="1,1,-2,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="0,1,-2,0" type="heisenberg" />
+	<interaction parameter="j3" from="0,0,0,0" to="1,0,-2,0" type="heisenberg" />
+	<interaction parameter="j4" from="0,0,0,0" to="0,0,2,0" type="heisenberg" />
+	<interaction parameter="j4" from="0,0,0,0" to="0,2,-2,0" type="heisenberg" />
+	<interaction parameter="j4" from="0,0,0,0" to="0,2,0,0" type="heisenberg" />
+	<interaction parameter="j4" from="0,0,0,0" to="2,-2,0,0" type="heisenberg" />
+	<interaction parameter="j4" from="0,0,0,0" to="2,0,-2,0" type="heisenberg" />
+	<interaction parameter="j4" from="0,0,0,0" to="2,0,0,0" type="heisenberg" />	
 </model>
 
 <model name="fcc-j1j2heisenberg">
@@ -557,3 +600,519 @@
 	<interaction parameter="g" from="0,0,0,1" to="0,-1,0,2" type="gy" />
 	<interaction parameter="g" from="0,0,0,2" to="0,0,1,3" type="gz" />
 </model>
+
+<model name="pyrochlore-heisenberg">
+	<!-- Heisenberg model on the pyrochlore lattice -->
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,0" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,2" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,3" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="j" from="-1,0,0,1" to="0,0,0,0" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="j" from="0,-1,0,2" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="j" from="0,0,0,0" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="j" from="0,0,-1,3" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="j" from="0,-1,0,2" to="0,0,-1,3" type="heisenberg" />
+</model>
+
+<model name="pyrochlore-xxz">
+	<!-- xxz model on the pyrochlore lattice -->
+	<interaction parameter="jx" from="0,0,0,1" to="0,0,0,0" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,2" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,2" to="0,0,0,1" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,0" to="0,0,0,3" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,3" to="0,0,0,1" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,2" to="0,0,0,3" type="xxyy" />
+	<interaction parameter="jx" from="-1,0,0,1" to="0,0,0,0" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,0" to="0,-1,0,2" type="xxyy" />
+	<interaction parameter="jx" from="0,-1,0,2" to="-1,0,0,1" type="xxyy" />
+	<interaction parameter="jx" from="0,0,0,0" to="0,0,-1,3" type="xxyy" />
+	<interaction parameter="jx" from="0,0,-1,3" to="-1,0,0,1" type="xxyy" />
+	<interaction parameter="jx" from="0,-1,0,2" to="0,0,-1,3" type="xxyy" />
+	<interaction parameter="jz" from="0,0,0,1" to="0,0,0,0" type="zz" />
+	<interaction parameter="jz" from="0,0,0,0" to="0,0,0,2" type="zz" />
+	<interaction parameter="jz" from="0,0,0,2" to="0,0,0,1" type="zz" />
+	<interaction parameter="jz" from="0,0,0,0" to="0,0,0,3" type="zz" />
+	<interaction parameter="jz" from="0,0,0,3" to="0,0,0,1" type="zz" />
+	<interaction parameter="jz" from="0,0,0,2" to="0,0,0,3" type="zz" />
+	<interaction parameter="jz" from="-1,0,0,1" to="0,0,0,0" type="zz" />
+	<interaction parameter="jz" from="0,0,0,0" to="0,-1,0,2" type="zz" />
+	<interaction parameter="jz" from="0,-1,0,2" to="-1,0,0,1" type="zz" />
+	<interaction parameter="jz" from="0,0,0,0" to="0,0,-1,3" type="zz" />
+	<interaction parameter="jz" from="0,0,-1,3" to="-1,0,0,1" type="zz" />
+	<interaction parameter="jz" from="0,-1,0,2" to="0,0,-1,3" type="zz" />
+</model>
+
+<model name="pyrochlore-dm">
+	<!-- Heisenberg model on the pyrochlore lattice with DM-interaction-->
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="zx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="-xz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="yx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="zx" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="-xz" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="yx" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="-yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="xy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="-yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="xy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="-zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="xz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="-zx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="-zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="xz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="-zx" />
+	
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="yz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="-zy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="zx" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="-xz" />
+	
+	<interaction parameter="j" from="-1,0,0,1" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="yz" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="-zy" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="zx" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="-xz" />
+	
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="zy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="-yz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="yx" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="-xy" />
+	
+	<interaction parameter="j" from="-1,0,0,1" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="zy" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="-yz" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="yx" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="zx" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="-xz" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="xy" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="-yx" />
+	
+	<interaction parameter="j" from="0,-1,0,2" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="zx" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="-xz" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="xy" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="-yx" />
+</model>
+
+<model name="pyrochlore-dm-gen">
+	<!-- Heisenberg model on the pyrochlore lattice with DM-interaction-->
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="zx" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="-xz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="yx" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="-xy" />
+	
+	<interaction parameter="jdown" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="zx" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="-xz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="yx" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="-xy" />
+	
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="zy" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="-yz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="xy" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="-yx" />
+	
+	<interaction parameter="jdown" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="zy" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="-yz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="xy" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="-yx" />
+	
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="yz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="-zy" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="xz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="-zx" />
+	
+	<interaction parameter="jdown" from="0,0,0,0" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="yz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="-zy" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="xz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="-zx" />
+	
+	<interaction parameter="jup" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="yz" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="-zy" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="zx" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="-xz" />
+	
+	<interaction parameter="jdown" from="-1,0,0,1" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="yz" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="-zy" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="zx" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="-xz" />
+	
+	<interaction parameter="jup" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="zy" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="-yz" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="yx" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="-xy" />
+	
+	<interaction parameter="jdown" from="-1,0,0,1" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="zy" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="-yz" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="yx" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="-xy" />
+	
+	<interaction parameter="jup" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="zx" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="-xz" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="xy" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="-yx" />
+	
+	<interaction parameter="jdown" from="0,-1,0,2" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="zx" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="-xz" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="xy" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="-yx" />
+</model>
+
+<model name="pyrochlore-dm-vin">
+	<!-- Heisenberg model on the pyrochlore lattice with DM-interaction-->
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="xz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="-zx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="xy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="xz" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="-zx" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="xy" />
+	<interaction parameter="d" from="0,0,0,0" to="-1,0,0,1" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="-zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="yx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="-zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="yx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,-1,0,2" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="-yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="zx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="-xz" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="-yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="zx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,-1,3" type="-xz" />
+	
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="zy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="-yz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="xz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="-zx" />
+	
+	<interaction parameter="j" from="-1,0,0,1" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="zy" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="-yz" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="xz" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,-1,0,2" type="-zx" />
+	
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="yz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="-zy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="xy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="-yx" />
+	
+	<interaction parameter="j" from="-1,0,0,1" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="yz" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="-zy" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="xy" />
+	<interaction parameter="d" from="-1,0,0,1" to="0,0,-1,3" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="xz" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="-zx" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="yx" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="-xy" />
+	
+	<interaction parameter="j" from="0,-1,0,2" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="xz" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="-zx" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="yx" />
+	<interaction parameter="d" from="0,-1,0,2" to="0,0,-1,3" type="-xy" />
+</model>
+
+<model name="pyrochlore-dm-vin-new">
+	<!-- Heisenberg model on the pyrochlore lattice with DM-interaction-->
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="xz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="-zx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="xy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,1" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="-1,0,0,1" type="xz" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="-1,0,0,1" type="-zx" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="-1,0,0,1" type="xy" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="-1,0,0,1" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="-zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="yx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,2" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,-1,0,2" type="yz" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,-1,0,2" type="-zy" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,-1,0,2" type="yx" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,-1,0,2" type="-xy" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="zy" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="-yz" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="zx" />
+	<interaction parameter="d" from="0,0,0,0" to="0,0,0,3" type="-xz" />
+	
+	<interaction parameter="j" from="0,0,0,0" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,0,-1,3" type="zy" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,0,-1,3" type="-yz" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,0,-1,3" type="zx" />
+	<interaction parameter="d+0.01" from="0,0,0,0" to="0,0,-1,3" type="-xz" />
+	
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="zy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="-yz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="xz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,2" type="-zx" />
+	
+	<interaction parameter="j" from="-1,0,0,1" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,-1,0,2" type="zy" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,-1,0,2" type="-yz" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,-1,0,2" type="xz" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,-1,0,2" type="-zx" />
+	
+	<interaction parameter="j" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="yz" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="-zy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="xy" />
+	<interaction parameter="d" from="0,0,0,1" to="0,0,0,3" type="-yx" />
+	
+	<interaction parameter="j" from="-1,0,0,1" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,0,-1,3" type="yz" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,0,-1,3" type="-zy" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,0,-1,3" type="xy" />
+	<interaction parameter="d+0.01" from="-1,0,0,1" to="0,0,-1,3" type="-yx" />
+	
+	<interaction parameter="j" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="xz" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="-zx" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="yx" />
+	<interaction parameter="d" from="0,0,0,2" to="0,0,0,3" type="-xy" />
+	
+	<interaction parameter="j" from="0,-1,0,2" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="d+0.01" from="0,-1,0,2" to="0,0,-1,3" type="xz" />
+	<interaction parameter="d+0.01" from="0,-1,0,2" to="0,0,-1,3" type="-zx" />
+	<interaction parameter="d+0.01" from="0,-1,0,2" to="0,0,-1,3" type="yx" />
+	<interaction parameter="d+0.01" from="0,-1,0,2" to="0,0,-1,3" type="-xy" />
+</model>
+
+
+<model name="pyrochlore-dm-vin-general">
+	<!-- Heisenberg model on the pyrochlore lattice with DM-interaction-->
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="xz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="-zx" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="xy" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,1" type="-yx" />
+	
+	<interaction parameter="jdown" from="0,0,0,0" to="-1,0,0,1" type="heisenberg" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="xz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="-zx" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="xy" />
+	<interaction parameter="ddown" from="0,0,0,0" to="-1,0,0,1" type="-yx" />
+	
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="yz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="-zy" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="yx" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,2" type="-xy" />
+	
+	<interaction parameter="jdown" from="0,0,0,0" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="yz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="-zy" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="yx" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,-1,0,2" type="-xy" />
+	
+	<interaction parameter="jup" from="0,0,0,0" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="zy" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="-yz" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="zx" />
+	<interaction parameter="dup" from="0,0,0,0" to="0,0,0,3" type="-xz" />
+	
+	<interaction parameter="jdown" from="0,0,0,0" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="zy" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="-yz" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="zx" />
+	<interaction parameter="ddown" from="0,0,0,0" to="0,0,-1,3" type="-xz" />
+	
+	<interaction parameter="jup" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="zy" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="-yz" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="xz" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,2" type="-zx" />
+	
+	<interaction parameter="jdown" from="-1,0,0,1" to="0,-1,0,2" type="heisenberg" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="zy" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="-yz" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="xz" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,-1,0,2" type="-zx" />
+	
+	<interaction parameter="jup" from="0,0,0,1" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="yz" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="-zy" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="xy" />
+	<interaction parameter="dup" from="0,0,0,1" to="0,0,0,3" type="-yx" />
+	
+	<interaction parameter="jdown" from="-1,0,0,1" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="yz" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="-zy" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="xy" />
+	<interaction parameter="ddown" from="-1,0,0,1" to="0,0,-1,3" type="-yx" />
+	
+	<interaction parameter="jup" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="xz" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="-zx" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="yx" />
+	<interaction parameter="dup" from="0,0,0,2" to="0,0,0,3" type="-xy" />
+	
+	<interaction parameter="jdown" from="0,-1,0,2" to="0,0,-1,3" type="heisenberg" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="xz" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="-zx" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="yx" />
+	<interaction parameter="ddown" from="0,-1,0,2" to="0,0,-1,3" type="-xy" />
+</model>
+
+<model name="fisher-j1j2j3heisenberg">
+	<!-- J1-J2-J3-Heisenberg model on the fisher lattice -->
+	<interaction parameter="j1" from="0,0,0,0" to="0,0,0,1" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,1" to="0,0,0,2" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,2" to="0,0,0,3" type="heisenberg" />
+	<interaction parameter="j1" from="0,0,0,3" to="0,0,0,0" type="heisenberg" />	
+	<interaction parameter="j2" from="0,0,0,2" to="1,0,0,0" type="heisenberg" />	
+	<interaction parameter="j2" from="0,0,0,3" to="0,1,0,0" type="heisenberg" />	
+</model>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
