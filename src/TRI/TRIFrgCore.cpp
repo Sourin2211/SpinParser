@@ -14,6 +14,7 @@
 #include "TRIFrgCore.hpp"
 #include "TRIEffectiveAction.hpp"
 
+
 TRIFrgCore::TRIFrgCore(const SpinModel &spinModel, const std::vector<Measurement *> &measurements, const std::map<std::string, std::string> &options) : FrgCore(measurements)
 {
 	//init options
@@ -76,6 +77,38 @@ TRIFrgCore::~TRIFrgCore()
 void TRIFrgCore::computeStep()
 {
 	//update cutoff and broadcast
+    /*
+	int rid;
+      
+      float sign = 1.0f;
+
+      SpinComponent sx(SpinComponent::X); // initialize sx to X
+
+      SpinComponent sy(SpinComponent::Y); // initialize sy to Y
+
+      SpinComponent sz(SpinComponent::Z); // initialize sz to Z
+
+	   for (auto i = FrgCommon::lattice().getBasis(); i != FrgCommon::lattice().end(); ++i)
+         {
+            for (auto j = FrgCommon::lattice().getRange(i); j != FrgCommon::lattice().end(); ++j)
+              {
+                               
+//              auto i = FrgCommon::lattice().fromParametrization(25); // this is site (0.0, 0.25, 0.25)
+
+//              auto j = FrgCommon::lattice().fromParametrization(72); // this is site (-0.75, -0.25, 0.5)
+
+                rid = FrgCommon::lattice().symmetryTransform(i, j, sx, sy, sz, sign);
+           
+		    std::cout << i.rid<< std::endl;
+
+            std::cout << "sx is now : " << static_cast<int>(sx) << std::endl; // sx should only take values 0, 1, or 2.
+			std::cout << "sy is now : " << static_cast<int>(sy) << std::endl;
+			std::cout << "sz is now : " << static_cast<int>(sz) << std::endl; 
+			 
+			 
+			  }
+		}
+    */
 	SpinParser::spinParser()->getLoadManager()->calculate(dataStacks[3]);
 	SpinParser::spinParser()->getLoadManager()->broadcast(dataStacks[3]);
 	//calculate 1-particle vertices and broadcast (required for Katanin calculation)

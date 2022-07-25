@@ -2,6 +2,7 @@
 #include <boost/test/included/unit_test.hpp>
 #include "lib/Log.hpp"
 #include "LatticeModelFactory.hpp"
+#include "SpinParser.hpp"
 
 typedef std::tuple<int, int, int, int> SiteParameters;
 BOOST_TEST_DONT_PRINT_LOG_VALUE(SiteParameters);
@@ -222,12 +223,17 @@ BOOST_FIXTURE_TEST_CASE(HoneycombLatticeSymmetry, HoneycombLatticeFixture)
 		SpinComponent s1 = SpinComponent::X;
 		SpinComponent s2 = SpinComponent::Y;
 		SpinComponent s3 = SpinComponent::Z;
-		int t = l->symmetryTransform(i1, i2, s1, s2, s3);
-
+		float spinComponentsign=1.0f;
+		int t = l->symmetryTransform(i1, i2, s1, s2, s3,spinComponentsign);
+        
+//		std::cout << "s1 is now : " << static_cast<int>(sx) << std::endl; // s1 is not getting printed 
+//		std::cout << "s2 is now : " << static_cast<int>(sy) << std::endl; // s2 is not getting printed 
+//		std::cout << "s3 is now : " << static_cast<int>(sz) << std::endl; // s3 is not getting printed 
+						
 		SpinComponent s1p = sxTarget[n];
 		SpinComponent s2p = syTarget[n];
 		SpinComponent s3p = szTarget[n];
-		int tp = l->symmetryTransform(l->zero(), target, s1p, s2p, s3p);
+		int tp = l->symmetryTransform(l->zero(), target, s1p, s2p, s3p,spinComponentsign);
 
 		BOOST_CHECK_EQUAL(t, tp);
 		BOOST_CHECK_EQUAL(s1, s1p);
@@ -268,8 +274,9 @@ BOOST_FIXTURE_TEST_CASE(HoneycombLatticeOverlap, HoneycombLatticeFixture)
 			SpinComponent sx2 = s2xList[n];
 			SpinComponent sy2 = s2yList[n];
 			SpinComponent sz2 = s2zList[n];
-			int i1p = l->symmetryTransform(l->zero(), i1, sx1, sy1, sz1);
-			int i2p = l->symmetryTransform(l->zero(), i2, sx2, sy2, sz2);
+			float spinComponentsign=1.0f;
+			int i1p = l->symmetryTransform(l->zero(), i1, sx1, sy1, sz1,spinComponentsign);
+			int i2p = l->symmetryTransform(l->zero(), i2, sx2, sy2, sz2,spinComponentsign);
 
 			if (rid1 == i1p && rid2 == i2p && tx1 == sx1 && ty1 == sy1 && tz1 == sz1 && tx2 == sx2 && ty2 == sy2 && tz2 == sz2)
 			{

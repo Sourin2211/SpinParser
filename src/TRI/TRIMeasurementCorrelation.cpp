@@ -290,13 +290,23 @@ void TRIMeasurementCorrelation::_calculateCorrelation(const int iterator) const
 	for (auto i = FrgCommon::lattice().getBasis(); i != FrgCommon::lattice().end(); ++i)
 	{
 		for (auto j = FrgCommon::lattice().getRange(i); j != FrgCommon::lattice().end(); ++j)
-		{
+		{   
 			int rid;
-
+            float spinComponentsign =1.0f;
 			SpinComponent sx(SpinComponent::X);
 			SpinComponent sy(SpinComponent::Y);
 			SpinComponent sz(SpinComponent::Z);
-			rid = FrgCommon::lattice().symmetryTransform(i, j, sx, sy, sz);
+			rid = FrgCommon::lattice().symmetryTransform(i, j, sx, sy, sz,spinComponentsign);
+
+			
+            std::cout << "This is check for TRIMeasurementCorrelation.cpp::299"<< std::endl;
+			
+            
+			std::cout << "sx is now : " << static_cast<int>(sx) << std::endl; // sx should only take values 0, 1, or 2.
+			std::cout << "sy is now : " << static_cast<int>(sy) << std::endl;
+			std::cout << "sz is now : " << static_cast<int>(sz) << std::endl; 
+            
+
 
 			_correlationsDD[offset] = susceptibility.bundle(15)[rid];
 			_correlationsXX[offset] = susceptibility.bundle(4 * static_cast<int>(sx) + static_cast<int>(sx))[rid];

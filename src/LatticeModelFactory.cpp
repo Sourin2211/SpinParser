@@ -233,7 +233,8 @@ namespace LatticeModelFactory
 	}
 	#pragma endregion
 
-	#pragma region SpinModelUnitCell definition
+    #pragma region SpinModelUnitCell definition
+
 	SpinModelUnitCell::SpinModelUnitCell() {}
 
 	SpinModelUnitCell::SpinModelUnitCell(const std::string &modelName, const std::string &bundle, const std::map<std::string, std::string> &modelOptions)
@@ -393,29 +394,239 @@ namespace LatticeModelFactory
 				transformedComponent[2] = SpinComponent::Z;
 				break;
 			case 1:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::Y;
+				transformedComponent[2] = SpinComponent::Z;
+				break;
+			case 2:
+				transformedComponent[0] = SpinComponent::X;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::Z;
+				break;
+			case 3:
+				transformedComponent[0] = SpinComponent::X;
+				transformedComponent[1] = SpinComponent::Y;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 4:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::Z;
+				break;
+			case 5:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::Y;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 6:
+				transformedComponent[0] = SpinComponent::X;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 7:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 8:
 				transformedComponent[0] = SpinComponent::X;
 				transformedComponent[1] = SpinComponent::Z;
 				transformedComponent[2] = SpinComponent::Y;
 				break;
-			case 2:
+			case 9:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::Z;
+				transformedComponent[2] = SpinComponent::Y;
+				break;
+			case 10:
+				transformedComponent[0] = SpinComponent::X;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::Y;
+				break;
+			case 11:
+				transformedComponent[0] = SpinComponent::X;
+				transformedComponent[1] = SpinComponent::Z;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 12:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::Y;
+				break;
+			case 13:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::Z;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 14:
+				transformedComponent[0] = SpinComponent::X;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 15:
+				transformedComponent[0] = SpinComponent::MinusX;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 16:
 				transformedComponent[0] = SpinComponent::Y;
 				transformedComponent[1] = SpinComponent::X;
 				transformedComponent[2] = SpinComponent::Z;
 				break;
-			case 3:
+			case 17:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::X;
+				transformedComponent[2] = SpinComponent::Z;
+				break;
+			case 18:
+				transformedComponent[0] = SpinComponent::Y;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::Z;
+				break;
+			case 19:
+				transformedComponent[0] = SpinComponent::Y;
+				transformedComponent[1] = SpinComponent::X;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 20:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::Z;
+				break;
+			case 21:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::X;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 22:
+				transformedComponent[0] = SpinComponent::Y;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 23:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::MinusZ;
+				break;
+			case 24:
 				transformedComponent[0] = SpinComponent::Y;
 				transformedComponent[1] = SpinComponent::Z;
 				transformedComponent[2] = SpinComponent::X;
 				break;
-			case 4:
+			case 25:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::Z;
+				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 26:
+				transformedComponent[0] = SpinComponent::Y;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 27:
+				transformedComponent[0] = SpinComponent::Y;
+				transformedComponent[1] = SpinComponent::Z;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 28:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 29:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::Z;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 30:
+				transformedComponent[0] = SpinComponent::Y;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 31:
+				transformedComponent[0] = SpinComponent::MinusY;
+				transformedComponent[1] = SpinComponent::MinusZ;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 32:
 				transformedComponent[0] = SpinComponent::Z;
 				transformedComponent[1] = SpinComponent::X;
 				transformedComponent[2] = SpinComponent::Y;
 				break;
-			case 5:
+			case 33:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::X;
+				transformedComponent[2] = SpinComponent::Y;
+				break;
+			case 34:
+				transformedComponent[0] = SpinComponent::Z;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::Y;
+				break;
+			case 35:
+				transformedComponent[0] = SpinComponent::Z;
+				transformedComponent[1] = SpinComponent::X;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 36:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::Y;
+				break;
+			case 37:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::X;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 38:
+				transformedComponent[0] = SpinComponent::Z;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 39:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::MinusX;
+				transformedComponent[2] = SpinComponent::MinusY;
+				break;
+			case 40:
 				transformedComponent[0] = SpinComponent::Z;
 				transformedComponent[1] = SpinComponent::Y;
 				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 41:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::Y;
+				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 42:
+				transformedComponent[0] = SpinComponent::Z;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 43:
+				transformedComponent[0] = SpinComponent::Z;
+				transformedComponent[1] = SpinComponent::Y;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 44:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::X;
+				break;
+			case 45:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::Y;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 46:
+				transformedComponent[0] = SpinComponent::Z;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::MinusX;
+				break;
+			case 47:
+				transformedComponent[0] = SpinComponent::MinusZ;
+				transformedComponent[1] = SpinComponent::MinusY;
+				transformedComponent[2] = SpinComponent::MinusX;
 				break;
 			default:
 				throw Exception(Exception::Type::ArgumentError, "Specified spin permutation does not exist");
@@ -556,8 +767,10 @@ namespace LatticeModelFactory
 		std::vector<LatticeSite> refNeighbors = getNeighbors(uc, ref);
 		for (auto c1 : refNeighbors)
 		{
+		// 	printf("c1=%d %d %d\n",c1.a0,c1.a1,c1.a2);
 			for (auto c2 : refNeighbors)
-			{
+			{    
+		//			printf("c2=%d %d %d\n",c2.a0,c2.a1,c2.a2);
 				//skip if (c1, c2, ref) collinear
 				if (cross(getSitePosition(uc, c1) - getSitePosition(uc, ref), getSitePosition(uc, c2) - getSitePosition(uc, ref)).norm() < __EPSILON) continue;
 
@@ -610,8 +823,8 @@ namespace LatticeModelFactory
 					double e = (transformation * getSitePosition(uc, site2) - getSitePosition(uc, ref)).norm();
 					if (e > __EPSILON) throw Exception(Exception::Type::InternalError, "Lattice symmetry calculation has failed. (Deviation of symmetry transformed site [s2] from target [ref] is " + std::to_string(e) + ", should be zero)");
 
-					//T(n1)-T(site2) should be collinear with c1-ref
-					e = cross((transformation * getSitePosition(uc, n1) - transformation * getSitePosition(uc, site2)).normalize(), (getSitePosition(uc, c1) - getSitePosition(uc, ref)).normalize()).norm();
+					//T(n1) should match of c1
+					e = (transformation * getSitePosition(uc, n1) - getSitePosition(uc, c1)).norm();
 					if (e > __EPSILON) throw Exception(Exception::Type::InternalError, "Lattice symmetry calculation has failed. (Deviation of symmetry transformed site [n1] from target [c1] is " + std::to_string(e) + ", should be zero)");
 
 					//T(n2) should be coplanar with c1-ref and c2-ref
@@ -635,7 +848,7 @@ namespace LatticeModelFactory
 
 					//check if spin couplings are invariant under transformation up to a global permutation of spin components
 					bool spinTransformationExists = false;
-					for (int i = 0; i < 6; ++i)
+					for (int i = 0; i < 48; ++i)  // Extend this to all 48 permutations.
 					{
 						SpinPermutation permutation(i);
 						bool validPermutation = true;
@@ -689,7 +902,49 @@ namespace LatticeModelFactory
 							{
 								for (int s2 = 0; s2 < 3; ++s2)
 								{
-									if (interaction.interactionStrength[s1][s2] != targetInteractionStrength[static_cast<int>(permutation.transformedComponent[s1])][static_cast<int>(permutation.transformedComponent[s2])]) validPermutation = false;
+
+									SpinComponent transformedComponent1 = permutation.transformedComponent[s1];
+									SpinComponent transformedComponent2 = permutation.transformedComponent[s2];
+									// Spincomponets  can be X,Y,Z ,and MinusX,MinusY, MinusZ.
+
+									// Now we need to perform the mapping from MinusX->X,etc.
+							
+								 	float spinsign =1.0f;
+									if(transformedComponent1 == SpinComponent::MinusX)    
+									{
+										transformedComponent1  = SpinComponent::X;
+										spinsign =-spinsign;
+									}
+									if(transformedComponent1  == SpinComponent::MinusY)
+									{
+										transformedComponent1  = SpinComponent::Y;
+										spinsign=-spinsign;
+									}
+									if(transformedComponent1  == SpinComponent::MinusZ)
+									{
+										transformedComponent1  = SpinComponent::Z;
+										spinsign =-spinsign;
+									}
+
+									if(transformedComponent2 == SpinComponent::MinusX)
+									{
+										transformedComponent2 = SpinComponent::X;
+										spinsign =-spinsign;
+									}
+									if(transformedComponent2 == SpinComponent::MinusY)
+									{
+										transformedComponent2 = SpinComponent::Y;
+										spinsign=-spinsign;
+									}
+									if(transformedComponent2 == SpinComponent::MinusZ)
+									{
+										transformedComponent2 = SpinComponent::Z;
+										spinsign =-spinsign;
+									}
+								// here the transformed components must be X,Y,Z
+
+									if (interaction.interactionStrength[s1][s2] != spinsign*targetInteractionStrength[static_cast<int>(transformedComponent1)][static_cast<int>(transformedComponent2)]) validPermutation = false;
+									//if (interaction.interactionStrength[s1][s2] != targetInteractionStrength[static_cast<int>(permutation.transformedComponent[s1])][static_cast<int>(permutation.transformedComponent[s2])]) validPermutation = false;
 								}
 							}
 						}
@@ -706,9 +961,18 @@ namespace LatticeModelFactory
 					if (!validTransformation) continue;
 					else validTransformations.push_back(std::pair<geometry::Mat4<double>, SpinPermutation>(transformation, spinTransformation));
 				}
-			}
+			    if(validTransformations.size() == 0)
+		      {
+			     printf("c1=%d %d %d %d\n",c1.a0,c1.a1,c1.a2,c1.b);
+		         printf("c2=%d %d %d %d\n",c2.a0,c2.a1,c2.a2,c2.b);
+		      }
+			
+		    }
+
 		}
 
+	   
+         
 		//compute f_i(site1) and return
 		std::vector<std::pair<LatticeSite, SpinPermutation>> fsite1;
 		if (validTransformations.size() > 0)
@@ -727,6 +991,7 @@ namespace LatticeModelFactory
 		}
 		else throw Exception(Exception::Type::InternalError, "Lattice symmetry calculation has failed. (Internal error. Could not establish identity as a valid symmetry operation)");
 		return fsite1;
+	
 	}
 	#pragma endregion
 
