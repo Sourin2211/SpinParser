@@ -189,21 +189,21 @@ void XYZMeasurementCorrelation::_calculateCorrelation(const int iterator) const
 		{
 			SpinComponent component;
 			int rid;
-
+            float spinsign =1.0f;
 			component = SpinComponent::X;
-			rid = FrgCommon::lattice().symmetryTransform(i, j, component);
+			rid = FrgCommon::lattice().symmetryTransform(i, j, component,spinsign);
 			_correlationsXX[offset] = susceptibility.bundle(static_cast<int>(component))[rid];
 
 			component = SpinComponent::Y;
-			rid = FrgCommon::lattice().symmetryTransform(i, j, component);
+			rid = FrgCommon::lattice().symmetryTransform(i, j, component,spinsign);
 			_correlationsYY[offset] = susceptibility.bundle(static_cast<int>(component))[rid];
 
 			component = SpinComponent::Z;
-			rid = FrgCommon::lattice().symmetryTransform(i, j, component);
+			rid = FrgCommon::lattice().symmetryTransform(i, j, component,spinsign);
 			_correlationsZZ[offset] = susceptibility.bundle(static_cast<int>(component))[rid];
 
 			component = SpinComponent::None;
-			rid = FrgCommon::lattice().symmetryTransform(i, j, component);
+			rid = FrgCommon::lattice().symmetryTransform(i, j, component,spinsign);
 			_correlationsDD[offset] = susceptibility.bundle(static_cast<int>(component))[rid];
 
 			++offset;

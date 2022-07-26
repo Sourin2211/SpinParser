@@ -212,8 +212,17 @@ public:
 			sign *= _zeta(static_cast<int>(s1)) *_zeta(static_cast<int>(s2));
 		}
 
-		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);
+		// int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);   // Need to make changes here , update with sign
+       
+		float symmetryTransformationsign=1.0f; // Checking for sign of spin
+		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2,symmetryTransformationsign);
+		
 
+		/*
+		std::cout<<"This is check for TRIVertexTwoParticle.hpp::218"<<std::endl;
+		std::cout << "s1 is now : " << static_cast<int>(s1) << std::endl; // s1 should only take values 0, 1, or 2.
+		std::cout << "s2 is now : " << static_cast<int>(s2) << std::endl; // s2 should only take values 0, 1, or 2.
+        */
 		if (channel == FrequencyChannel::S)
 		{
 			int exactS = FrgCommon::frequency().offset(s);
@@ -226,12 +235,12 @@ public:
 			FrgCommon::frequency().interpolateOffset(t, lowerT, upperT, biasT);
 			FrgCommon::frequency().interpolateOffset(u, lowerU, upperU, biasU);
 
-			return sign * (
+			return symmetryTransformationsign * (sign * (
 				(1 - biasU) * (
 				(1 - biasT) * (_directAccessMapFrequencyExchange(siteOffset, exactS, lowerT, lowerU, s1, s2)) + biasT * (_directAccessMapFrequencyExchange(siteOffset, exactS, upperT, lowerU, s1, s2))
 					) + biasU * (
 					(1 - biasT) * (_directAccessMapFrequencyExchange(siteOffset, exactS, lowerT, upperU, s1, s2)) + biasT * (_directAccessMapFrequencyExchange(siteOffset, exactS, upperT, upperU, s1, s2))
-						));
+						)));
 		}
 		else if (channel == FrequencyChannel::T)
 		{
@@ -245,12 +254,12 @@ public:
 			FrgCommon::frequency().interpolateOffset(s, lowerS, upperS, biasS);
 			FrgCommon::frequency().interpolateOffset(u, lowerU, upperU, biasU);
 
-			return sign * (
+			return symmetryTransformationsign * (sign * (
 				(1 - biasU) * (
 				(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, exactT, lowerU, s1, s2)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, exactT, lowerU, s1, s2))
 					) + biasU * (
 					(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, exactT, upperU, s1, s2)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, exactT, upperU, s1, s2))
-						));
+						)));
 		}
 		else if (channel == FrequencyChannel::U)
 		{
@@ -264,12 +273,12 @@ public:
 			FrgCommon::frequency().interpolateOffset(s, lowerS, upperS, biasS);
 			FrgCommon::frequency().interpolateOffset(t, lowerT, upperT, biasT);
 
-			return sign * (
+			return symmetryTransformationsign * (sign * (
 				(1 - biasT) * (
 				(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, lowerT, exactU, s1, s2)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, lowerT, exactU, s1, s2))
 					) + biasT * (
 					(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, upperT, exactU, s1, s2)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, upperT, exactU, s1, s2))
-						));
+						)));
 		}
 		else if (channel == FrequencyChannel::None)
 		{
@@ -284,7 +293,7 @@ public:
 			FrgCommon::frequency().interpolateOffset(t, lowerT, upperT, biasT);
 			FrgCommon::frequency().interpolateOffset(u, lowerU, upperU, biasU);
 
-			return sign * (
+			return symmetryTransformationsign * (sign * (
 				(1 - biasU) * (
 				(1 - biasT) * (
 					(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, lowerT, lowerU, s1, s2)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, lowerT, lowerU, s1, s2))
@@ -297,14 +306,14 @@ public:
 						) + biasT * (
 						(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, upperT, upperU, s1, s2)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, upperT, upperU, s1, s2))
 							)
-						));
+						)));
 		}
 		else if (channel == FrequencyChannel::All)
 		{
 			int exactS = FrgCommon::frequency().offset(s);
 			int exactT = FrgCommon::frequency().offset(t);
 			int exactU = FrgCommon::frequency().offset(u);
-			return sign * _directAccessMapFrequencyExchange(siteOffset, exactS, exactT, exactU, s1, s2);
+			return symmetryTransformationsign * (sign * _directAccessMapFrequencyExchange(siteOffset, exactS, exactT, exactU, s1, s2));
 		}
 		else throw Exception(Exception::Type::ArgumentError, "Specified frequency channel does not exist");
 	}
@@ -320,6 +329,7 @@ public:
 	 * @param accessBuffer Access buffer. 
 	 * @return float Vertex value. 
 	 */
+
 	template <int n> float getValue(LatticeIterator i1, LatticeIterator i2, SpinComponent s1, SpinComponent s2, const TRIVertexTwoParticleAccessBuffer<n> &accessBuffer) const
 	{
 		if (accessBuffer.pairExchange)
@@ -327,12 +337,26 @@ public:
 			std::swap(i1, i2);
 			std::swap(s1, s2);
 		}
-		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);
+		
+		//int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);   // update this with sign.
+		
+		float symmetryTransformationsign =1.0f;
+		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2,symmetryTransformationsign); 
+
+		/*
+		// Not getting output.	
+		std::cout<<"This is check for TRIVertexTwoParticle.hpp::343"<<std::endl;
+		std::cout << "s1 is now : " << static_cast<int>(s1) << std::endl; // s1 should only take values 0, 1, or 2.
+		std::cout << "s2 is now : " << static_cast<int>(s2) << std::endl; // s2 should only take values 0, 1, or 2.	
+		*/
+
 		int spinOffset = (4 * static_cast<int>(s1) + static_cast<int>(s2)) *FrgCommon::lattice().size;
 
 		float value = 0.0f;
 		for (int i = 0; i < n; ++i) value += accessBuffer.sign[i][static_cast<int>(s1)][static_cast<int>(s2)] * accessBuffer.frequencyWeights[i] * _data[accessBuffer.frequencyOffsets[i] + spinOffset + siteOffset];
-		return value;
+		// return value;
+
+		return symmetryTransformationsign*value;
 	}
 
 	/**
