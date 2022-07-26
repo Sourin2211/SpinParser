@@ -210,9 +210,8 @@ public:
 		{
 			t = -t;
 		}
-        
-		float spinsign =1.0f;
-		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, symmetry,spinsign);
+
+		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, symmetry);
 
 		if (channel == FrequencyChannel::S)
 		{
@@ -226,11 +225,11 @@ public:
 			FrgCommon::frequency().interpolateOffset(t, lowerT, upperT, biasT);
 			FrgCommon::frequency().interpolateOffset(u, lowerU, upperU, biasU);
 
-			return spinsign*((1 - biasU)* (
+			return (1 - biasU) * (
 				(1 - biasT) * (_directAccessMapFrequencyExchange(siteOffset, exactS, lowerT, lowerU, symmetry)) + biasT * (_directAccessMapFrequencyExchange(siteOffset, exactS, upperT, lowerU, symmetry))
 				) + biasU * (
 				(1 - biasT) * (_directAccessMapFrequencyExchange(siteOffset, exactS, lowerT, upperU, symmetry)) + biasT * (_directAccessMapFrequencyExchange(siteOffset, exactS, upperT, upperU, symmetry))
-					));
+					);
 		}
 		else if (channel == FrequencyChannel::T)
 		{
@@ -244,11 +243,11 @@ public:
 			FrgCommon::frequency().interpolateOffset(s, lowerS, upperS, biasS);
 			FrgCommon::frequency().interpolateOffset(u, lowerU, upperU, biasU);
 
-			return spinsign *((1 - biasU) * (
+			return (1 - biasU) * (
 				(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, exactT, lowerU, symmetry)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, exactT, lowerU, symmetry))
 				) + biasU * (
 				(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, exactT, upperU, symmetry)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, exactT, upperU, symmetry))
-					));
+					);
 		}
 		else if (channel == FrequencyChannel::U)
 		{
@@ -262,11 +261,11 @@ public:
 			FrgCommon::frequency().interpolateOffset(s, lowerS, upperS, biasS);
 			FrgCommon::frequency().interpolateOffset(t, lowerT, upperT, biasT);
 
-			return spinsign*((1 - biasT) * (
+			return (1 - biasT) * (
 				(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, lowerT, exactU, symmetry)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, lowerT, exactU, symmetry))
 				) + biasT * (
 				(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, upperT, exactU, symmetry)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, upperT, exactU, symmetry))
-					));
+					);
 		}
 		else if (channel == FrequencyChannel::None)
 		{
@@ -282,7 +281,7 @@ public:
 			FrgCommon::frequency().interpolateOffset(u, lowerU, upperU, biasU);
 
 			return
-				spinsign*((1 - biasU) * (
+				(1 - biasU) * (
 				(1 - biasT) * (
 					(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, lowerT, lowerU, symmetry)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, lowerT, lowerU, symmetry))
 					) + biasT * (
@@ -294,7 +293,7 @@ public:
 						) + biasT * (
 						(1 - biasS) * (_directAccessMapFrequencyExchange(siteOffset, lowerS, upperT, upperU, symmetry)) + biasS * (_directAccessMapFrequencyExchange(siteOffset, upperS, upperT, upperU, symmetry))
 							)
-						));
+						);
 		}
 		else if (channel == FrequencyChannel::All)
 		{
@@ -322,8 +321,7 @@ public:
 	 */
 	template <int n> float getValue(const LatticeIterator i1, const LatticeIterator i2, SpinComponent symmetry, const XYZVertexTwoParticleAccessBuffer<n> &accessBuffer) const
 	{
-		float spinsign =1.0f;
-		int siteOffset = (accessBuffer.siteExchange) ? FrgCommon::lattice().symmetryTransform(i2, i1, symmetry,spinsign) : FrgCommon::lattice().symmetryTransform(i1, i2, symmetry,spinsign);
+		int siteOffset = (accessBuffer.siteExchange) ? FrgCommon::lattice().symmetryTransform(i2, i1, symmetry) : FrgCommon::lattice().symmetryTransform(i1, i2, symmetry);
 
 		float value = 0.0f;
 		if (symmetry == SpinComponent::X)
@@ -343,7 +341,7 @@ public:
 			for (int i = 0; i < n; ++i) value += accessBuffer.signFlag[i] * accessBuffer.frequencyWeights[i] * _dataDD[accessBuffer.frequencyOffsets[i] + siteOffset];
 		}
 
-		return spinsign*value;
+		return value;
 	}
 
 	/**

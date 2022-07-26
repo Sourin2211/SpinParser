@@ -10,7 +10,6 @@
 #include <array>
 #include <vector>
 #include <tuple>
-#include <iostream>
 #include "lib/Geometry.hpp"
 #include "lib/Assert.hpp"
 
@@ -31,10 +30,7 @@ enum struct SpinComponent : int
 	X = 0, ///< x-component of a spin. 
 	Y = 1, ///< y-component of a spin. 
 	Z = 2, ///< z-component of a spin. 
-	None = 3, ///< No spin component specified. 
-	MinusX=4,  ///< -x-component of a spin.
-	MinusY=5,  ///< -y-component of a spin.
-	MinusZ=6   ///< -z-component of a spin.
+	None = 3 ///< No spin component specified. 
 };
 
 /**
@@ -413,30 +409,10 @@ public:
 	 * @param[out] spinComponent Spin component to transform under the mapping. 
 	 * @return int Representative id of i2'. 
 	 */
-
-//	float spinComponentsign=1.0f;  // Not needed .
-	int symmetryTransform(const LatticeIterator &i1, const LatticeIterator &i2, SpinComponent &spinComponent, float &spinComponentsign) const
+	int symmetryTransform(const LatticeIterator &i1, const LatticeIterator &i2, SpinComponent &spinComponent) const
 	{
-		
 		ASSERT(_symmetryTable[i1.id * _dataSize + i2.id].rid != -1);
 		if (spinComponent != SpinComponent::None) spinComponent = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent)];
-                                    
-        if(spinComponent == SpinComponent::MinusX)
-		{
-			spinComponent = SpinComponent::X;
-			spinComponentsign=-spinComponentsign;
-		}
-        if(spinComponent == SpinComponent::MinusY)
-        {
-           spinComponent =SpinComponent::Y;
-		   spinComponentsign =-spinComponentsign;
-		}
-		if(spinComponent == SpinComponent::MinusZ)
-		{
-			spinComponent = SpinComponent::Z;
-			spinComponentsign=-spinComponentsign;
-		}
-         //how will this "sign" be returned?
 		return _symmetryTable[i1.id * _dataSize + i2.id].rid;
 	}
 
@@ -450,54 +426,13 @@ public:
 	 * @param[out] spinComponent2 Spin component to transform under the mapping. 
 	 * @return int Representative id of i2'. 
 	 */
-
-
-	int symmetryTransform(const LatticeIterator &i1, const LatticeIterator &i2, SpinComponent &spinComponent1, SpinComponent &spinComponent2, float &spinComponentsign) const
+	int symmetryTransform(const LatticeIterator &i1, const LatticeIterator &i2, SpinComponent &spinComponent1, SpinComponent &spinComponent2) const
 	{
 		ASSERT(_symmetryTable[i1.id * _dataSize + i2.id].rid != -1);
 		ASSERT(&spinComponent1 != &spinComponent2);
 
 		if (spinComponent1 != SpinComponent::None) spinComponent1 = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent1)];
 		if (spinComponent2 != SpinComponent::None) spinComponent2 = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent2)];
-		// at this point we need a mapping from MinusX->X, MinusY->y,MinusZ-> Z for both spinComponent1 and spinComponent2
-		// First we do it for spinComponent1
-		
-        if(spinComponent1 == SpinComponent::MinusX)
-		{
-			spinComponent1 = SpinComponent::X;
-			spinComponentsign=-spinComponentsign;
-//			std::cout << "spinComponent1 is now (Sx): " << static_cast<int>(spinComponent1) << std::endl;  //  spinComponent1_x is not getting printed 
-		}
-        if(spinComponent1 == SpinComponent::MinusY)
-        {
-           spinComponent1 = SpinComponent::Y;
-		   spinComponentsign =-spinComponentsign;
-//		   std::cout << "spinComponent1 is now Sy : " << static_cast<int>(spinComponent1) << std::endl;    // spinComponent1_y is not getting printed 
-		}
-		if(spinComponent1 == SpinComponent::MinusZ)
-		{
-			spinComponent1 = SpinComponent::Z;
-			spinComponentsign=-spinComponentsign;
-//			std::cout << "spinComponent1 is now Sz : " << static_cast<int>(spinComponent1) << std::endl;   // spinComponent1_z is not getting printed 
-		}
-		// Now we do it for spinComponent2
-		if(spinComponent2 == SpinComponent::MinusX)
-		{
-			spinComponent2 = SpinComponent::X;
-			spinComponentsign=-spinComponentsign;
-		}
-        if(spinComponent2 == SpinComponent::MinusY)
-        {
-           spinComponent2 = SpinComponent::Y;
-		   spinComponentsign =-spinComponentsign;
-		}
-		if(spinComponent2 == SpinComponent::MinusZ)
-		{
-			spinComponent2 = SpinComponent::Z;
-			spinComponentsign=-spinComponentsign;
-		}
-        
-		//  how will this "sign" be returned?
 		return _symmetryTable[i1.id * _dataSize + i2.id].rid;
 	}
 
@@ -512,8 +447,7 @@ public:
 	 * @param[out] spinComponent3 Spin component to transform under the mapping. 
 	 * @return int Representative id of i2'. 
 	 */
-	
-	int symmetryTransform(const LatticeIterator &i1, const LatticeIterator &i2, SpinComponent &spinComponent1, SpinComponent &spinComponent2, SpinComponent &spinComponent3,float &spinComponentsign) const
+	int symmetryTransform(const LatticeIterator &i1, const LatticeIterator &i2, SpinComponent &spinComponent1, SpinComponent &spinComponent2, SpinComponent &spinComponent3) const
 	{
 		ASSERT(_symmetryTable[i1.id * _dataSize + i2.id].rid != -1);
 		ASSERT(&spinComponent1 != &spinComponent2);
@@ -523,60 +457,6 @@ public:
 		if (spinComponent1 != SpinComponent::None) spinComponent1 = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent1)];
 		if (spinComponent2 != SpinComponent::None) spinComponent2 = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent2)];
 		if (spinComponent3 != SpinComponent::None) spinComponent3 = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent3)];
-
-        // At this point spincomponents can take X,y,Z,MinusX ,MinusY,MinusZ .
-		// Before returning we should make sure that mapping of MinusX->X etc is done.
-
-		 
-        if(spinComponent1 == SpinComponent::MinusX)
-		{
-			spinComponent1 = SpinComponent::X;
-			spinComponentsign=-spinComponentsign;
-		}
-        if(spinComponent1 == SpinComponent::MinusY)
-        {
-           spinComponent1 = SpinComponent::Y;
-		   spinComponentsign =-spinComponentsign;
-		}
-		if(spinComponent1 == SpinComponent::MinusZ)
-		{
-			spinComponent1 =SpinComponent::Z;
-			spinComponentsign=-spinComponentsign;
-		}
-		// Now we do it for spinComponent2
-		if(spinComponent2 == SpinComponent::MinusX)
-		{
-			spinComponent2= SpinComponent::X;
-			spinComponentsign=-spinComponentsign;
-		}
-        if(spinComponent2 == SpinComponent::MinusY)
-        {
-           spinComponent2 = SpinComponent::Y;
-		   spinComponentsign =-spinComponentsign;
-		}
-		if(spinComponent2 == SpinComponent::MinusZ)
-		{
-			spinComponent2 =SpinComponent::Z;
-			spinComponentsign=-spinComponentsign;
-		}
-        // Now we do it for spinComponent3
-		if(spinComponent3 == SpinComponent::MinusX)
-		{
-			spinComponent3= SpinComponent::X;
-			spinComponentsign=-spinComponentsign;
-		}
-        if(spinComponent3 == SpinComponent::MinusY)
-        {
-           spinComponent3 = SpinComponent::Y;
-		   spinComponentsign =-spinComponentsign;
-		}
-		if(spinComponent3 == SpinComponent::MinusZ)
-		{
-			spinComponent3 =SpinComponent::Z;
-			spinComponentsign=-spinComponentsign;
-		} 
-		//how will this "sign" be returned?
-
 		return _symmetryTable[i1.id * _dataSize + i2.id].rid;
 	}
 
