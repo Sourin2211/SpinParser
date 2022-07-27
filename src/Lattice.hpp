@@ -543,16 +543,19 @@ public:
         if(spinComponent1 == SpinComponent::MinusX)
 		{
 			spinComponent1 = SpinComponent::X;
+			std::cout<<"hello 540"<<std::endl;
 			spinComponentsign=-spinComponentsign;
 		}
         if(spinComponent1 == SpinComponent::MinusY)
         {
            spinComponent1 = SpinComponent::Y;
+		   std::cout<<"hello 549"<<std::endl;
 		   spinComponentsign =-spinComponentsign;
 		}
 		if(spinComponent1 == SpinComponent::MinusZ)
 		{
 			spinComponent1 =SpinComponent::Z;
+			 std::cout<<"hello 555"<<std::endl;
 			spinComponentsign=-spinComponentsign;
 		}
 		// Now we do it for spinComponent2
@@ -560,16 +563,19 @@ public:
 		if(spinComponent2 == SpinComponent::MinusX)
 		{
 			spinComponent2= SpinComponent::X;
+			 std::cout<<"hello 563"<<std::endl;
 			spinComponentsign=-spinComponentsign;
 		}
         if(spinComponent2 == SpinComponent::MinusY)
         {
            spinComponent2 = SpinComponent::Y;
+		    std::cout<<"hello 569"<<std::endl;
 		   spinComponentsign =-spinComponentsign;
 		}
 		if(spinComponent2 == SpinComponent::MinusZ)
 		{
 			spinComponent2 =SpinComponent::Z;
+			 std::cout<<"hello 575"<<std::endl;
 			spinComponentsign=-spinComponentsign;
 		}
 
